@@ -168,13 +168,13 @@ namespace GoogleJpgCompact {
 
                 if (_process.Start()) {
                     _process.StandardInput.WriteLine(filePath + " " + args);
-                    StreamReader sr = _process.StandardOutput;
-                    string s = sr.ReadToEnd();
-                    Cmn.Log.WriteToFile("RunCmd", s);
+                    //StreamReader sr = _process.StandardOutput;
+                    //string s = sr.ReadToEnd();
+                    //Cmn.Log.WriteToFile("RunCmd", s);
 
                     _process.StandardInput.WriteLine("exit");
-                    sr = _process.StandardOutput;
-                    s = sr.ReadToEnd();
+                    StreamReader sr = _process.StandardOutput;
+                    string s = sr.ReadToEnd();
                     Cmn.Log.WriteToFile("RunCmd", s);
                     _process.Close();
                 }
